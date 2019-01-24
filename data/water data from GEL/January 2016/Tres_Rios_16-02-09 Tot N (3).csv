@@ -1,0 +1,63 @@
+Sample ID,Sample Details,Test,Results,Units,Absorbance,Date and Time,Operator,Pre Dil Factor,Auto Dil Factor
+STANDARD 1,,Nitrate+Nitrite 2,0.006,mg N/L,0.006127,Tue Feb 09 09:44:20 2016,mdm,1,1
+STANDARD 90,,Nitrate+Nitrite 2,0.009,mg N/L,0.008939,Tue Feb 09 09:46:25 2016,mdm,1,1
+STANDARD 91,,Nitrate+Nitrite 2,0.01,mg N/L,0.010191,Tue Feb 09 09:48:30 2016,mdm,1,1
+STANDARD 92,,Nitrate+Nitrite 2,0.012,mg N/L,0.012055,Tue Feb 09 09:50:35 2016,mdm,1,1
+STANDARD 93,,Nitrate+Nitrite 2,0.022,mg N/L,0.022127,Tue Feb 09 09:52:40 2016,mdm,1,1
+STANDARD 94,,Nitrate+Nitrite 2,0.07,mg N/L,0.07035,Tue Feb 09 09:54:43 2016,mdm,1,1
+STANDARD 95,,Nitrate+Nitrite 2,0.24,mg N/L,0.239732,Tue Feb 09 09:56:48 2016,mdm,1,1
+STANDARD 96,,Nitrate+Nitrite 2,0.643,mg N/L,0.642735,Tue Feb 09 09:58:53 2016,mdm,1,1
+STANDARD 0,,Nitrate+Nitrite 2,0.006,mg N/L,0.006367,Tue Feb 09 10:00:58 2016,mdm,1,1
+C C V,,Nitrate+Nitrite 2,0.1,mg N/L,0.038647,Tue Feb 09 10:03:03 2016,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,0,mg N/L,0.005827,Tue Feb 09 10:05:09 2016,mdm,1,1
+CentralSouth_1_21,,Nitrate+Nitrite 2,1.868,mg N/L,0.147974,Tue Feb 09 10:07:15 2016,mdm,2,2
+CentralSouth_1_22,,Nitrate+Nitrite 2,1.656,mg N/L,0.13297,Tue Feb 09 10:09:20 2016,mdm,2,2
+CentralSouth_1_23,,Nitrate+Nitrite 2,2.391,mg N/L,0.184401,Tue Feb 09 10:11:25 2016,mdm,2,2
+CentralSouth_1_24,,Nitrate+Nitrite 2,1.661,mg N/L,0.133326,Tue Feb 09 10:13:30 2016,mdm,2,2
+CentralSouth_1_blk,,Nitrate+Nitrite 2,0.218,mg N/L,0.041632,Tue Feb 09 10:15:35 2016,mdm,2,1
+Price_1_1,,Nitrate+Nitrite 2,2.892,mg N/L,0.218719,Tue Feb 09 10:17:41 2016,mdm,2,2
+Price_1_2,,Nitrate+Nitrite 2,2.883,mg N/L,0.218105,Tue Feb 09 10:19:46 2016,mdm,2,2
+Price_1_3,,Nitrate+Nitrite 2,3.432,mg N/L,0.255604,Tue Feb 09 10:21:51 2016,mdm,2,2
+Price_1_4,,Nitrate+Nitrite 2,2.613,mg N/L,0.199653,Tue Feb 09 10:23:57 2016,mdm,2,2
+Price_1_5,,Nitrate+Nitrite 2,3.627,mg N/L,0.268912,Tue Feb 09 10:26:02 2016,mdm,2,2
+C C V,,Nitrate+Nitrite 2,0.085,mg N/L,0.03399,Tue Feb 09 10:28:08 2016,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,0.002,mg N/L,0.006487,Tue Feb 09 10:30:14 2016,mdm,1,1
+Price_1_6,,Nitrate+Nitrite 2,2.885,mg N/L,0.218258,Tue Feb 09 10:32:20 2016,mdm,2,2
+Price_1_7,,Nitrate+Nitrite 2,2.877,mg N/L,0.217728,Tue Feb 09 10:34:25 2016,mdm,2,2
+Price_1_8,,Nitrate+Nitrite 2,2.791,mg N/L,0.211866,Tue Feb 09 10:36:31 2016,mdm,2,2
+Price_1_9,,Nitrate+Nitrite 2,2.432,mg N/L,0.1872,Tue Feb 09 10:38:37 2016,mdm,2,2
+Price_1_10,,Nitrate+Nitrite 2,2.746,mg N/L,0.208794,Tue Feb 09 10:40:43 2016,mdm,2,2
+Price_1_11,,Nitrate+Nitrite 2,3.226,mg N/L,0.241497,Tue Feb 09 10:42:49 2016,mdm,2,2
+Price_1_12,,Nitrate+Nitrite 2,2.9,mg N/L,0.219265,Tue Feb 09 10:44:55 2016,mdm,2,2
+Price_1_13,,Nitrate+Nitrite 2,3.305,mg N/L,0.246894,Tue Feb 09 10:47:00 2016,mdm,2,2
+Price_1_14,,Nitrate+Nitrite 2,2.674,mg N/L,0.203821,Tue Feb 09 10:49:06 2016,mdm,2,2
+Price_1_15,,Nitrate+Nitrite 2,2.548,mg N/L,0.195206,Tue Feb 09 10:51:12 2016,mdm,2,2
+C C V,,Nitrate+Nitrite 2,0.083,mg N/L,0.033287,Tue Feb 09 10:53:17 2016,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,-0.001,mg N/L,0.005476,Tue Feb 09 10:55:21 2016,mdm,1,1
+Price_1_16,,Nitrate+Nitrite 2,2.627,mg N/L,0.200644,Tue Feb 09 10:57:27 2016,mdm,2,2
+Price_1_17,,Nitrate+Nitrite 2,1.959,mg N/L,0.154341,Tue Feb 09 10:59:32 2016,mdm,2,2
+Price_1_18,,Nitrate+Nitrite 2,1.979,mg N/L,0.155718,Tue Feb 09 11:01:38 2016,mdm,2,2
+Price_1_19,,Nitrate+Nitrite 2,2.313,mg N/L,0.179021,Tue Feb 09 11:03:43 2016,mdm,2,2
+Price_1_20,,Nitrate+Nitrite 2,2.094,mg N/L,0.163811,Tue Feb 09 11:05:48 2016,mdm,2,2
+Price_1_21,,Nitrate+Nitrite 2,1.951,mg N/L,0.153751,Tue Feb 09 11:07:54 2016,mdm,2,2
+Price_1_22,,Nitrate+Nitrite 2,2.026,mg N/L,0.159068,Tue Feb 09 11:09:59 2016,mdm,2,2
+Price_1_23,,Nitrate+Nitrite 2,1.946,mg N/L,0.153414,Tue Feb 09 11:12:04 2016,mdm,2,2
+Price_1_24,,Nitrate+Nitrite 2,2.262,mg N/L,0.175462,Tue Feb 09 11:14:09 2016,mdm,2,2
+Price_1_blk,,Nitrate+Nitrite 2,0.187,mg N/L,0.036639,Tue Feb 09 11:16:14 2016,mdm,2,1
+C C V,,Nitrate+Nitrite 2,0.084,mg N/L,0.033542,Tue Feb 09 11:18:17 2016,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,0.001,mg N/L,0.005999,Tue Feb 09 11:20:23 2016,mdm,1,1
+Tres Rios 1762,,Nitrate+Nitrite 2,7.794,mg N/L,0.613039,Tue Feb 09 11:22:29 2016,mdm,2,2
+Tres Rios 1763,,Nitrate+Nitrite 2,7.653,mg N/L,0.595077,Tue Feb 09 11:23:23 2016,mdm,2,2
+Tres Rios 1764,,Nitrate+Nitrite 2,8.496,mg N/L,0.414453,Tue Feb 09 11:50:11 2016,mdm,2,2.99
+Tres Rios 1765,,Nitrate+Nitrite 2,7.064,mg N/L,0.531628,Tue Feb 09 11:25:12 2016,mdm,2,2
+Tres Rios 1766,,Nitrate+Nitrite 2,7.515,mg N/L,0.578725,Tue Feb 09 11:26:07 2016,mdm,2,2
+Tres Rios 1767,,Nitrate+Nitrite 2,6.171,mg N/L,0.453242,Tue Feb 09 11:27:01 2016,mdm,2,2
+Control A,,Nitrate+Nitrite 2,92.529,mg N/L,0.273948,Tue Feb 09 11:27:56 2016,mdm,2,50
+Control B,,Nitrate+Nitrite 2,83.942,mg N/L,0.250504,Tue Feb 09 11:28:50 2016,mdm,4,25
+Digested Blank,,Nitrate+Nitrite 2,0.146,mg N/L,0.029978,Tue Feb 09 11:29:45 2016,mdm,2,1
+C C V,,Nitrate+Nitrite 2,0.085,mg N/L,0.033944,Tue Feb 09 11:30:40 2016,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,0.029,mg N/L,0.015439,Tue Feb 09 11:31:35 2016,mdm,1,1
+CCV,,Nitrate+Nitrite 2,0.087,mg N/L,0.034666,Tue Feb 09 11:48:21 2016,mdm,1,1
+CCB,,Nitrate+Nitrite 2,-0.004,mg N/L,0.004314,Tue Feb 09 11:49:16 2016,mdm,1,1
+CCV,,Nitrate+Nitrite 2,0.085,mg N/L,0.033962,Tue Feb 09 11:51:05 2016,mdm,1,1
+CCB,,Nitrate+Nitrite 2,-0.005,mg N/L,0.004058,Tue Feb 09 11:52:00 2016,mdm,1,1

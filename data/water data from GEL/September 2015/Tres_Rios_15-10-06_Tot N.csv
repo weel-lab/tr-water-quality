@@ -1,0 +1,23 @@
+Sample ID,Sample Details,Test,Results,Units,Absorbance,Date and Time,Operator,Pre Dil Factor,Auto Dil Factor
+STANDARD 1,,Nitrate+Nitrite 2,0.009,mg N/L,0.00861,Tue Oct 06 09:35:16 2015,mdm,1,1
+STANDARD 90,,Nitrate+Nitrite 2,0.01,mg N/L,0.0104,Tue Oct 06 09:37:21 2015,mdm,1,1
+STANDARD 91,,Nitrate+Nitrite 2,0.012,mg N/L,0.011521,Tue Oct 06 09:39:26 2015,mdm,1,1
+STANDARD 92,,Nitrate+Nitrite 2,0.014,mg N/L,0.014202,Tue Oct 06 09:41:30 2015,mdm,1,1
+STANDARD 93,,Nitrate+Nitrite 2,0.025,mg N/L,0.025181,Tue Oct 06 09:43:35 2015,mdm,1,1
+STANDARD 94,,Nitrate+Nitrite 2,0.075,mg N/L,0.074774,Tue Oct 06 09:45:40 2015,mdm,1,1
+STANDARD 95,,Nitrate+Nitrite 2,0.242,mg N/L,0.241616,Tue Oct 06 09:47:45 2015,mdm,1,1
+STANDARD 96,,Nitrate+Nitrite 2,0.541,mg N/L,0.54057,Tue Oct 06 09:49:48 2015,mdm,1,1
+STANDARD 0,,Nitrate+Nitrite 2,0.009,mg N/L,0.008984,Tue Oct 06 09:51:53 2015,mdm,1,1
+C C V,,Nitrate+Nitrite 2,0.081,mg N/L,0.035667,Tue Oct 06 09:53:58 2015,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,0.002,mg N/L,0.008303,Tue Oct 06 09:56:03 2015,mdm,1,1
+Tres Rios 1738,(9/21/2015),Nitrate+Nitrite 2,7.51,mg N/L,0.35495,Tue Oct 06 09:58:09 2015,mdm,2,2.99
+Tres Rios 1739,,Nitrate+Nitrite 2,7.869,mg N/L,0.369626,Tue Oct 06 10:00:15 2015,mdm,2,2.99
+Tres Rios 1740,,Nitrate+Nitrite 2,7.476,mg N/L,0.353555,Tue Oct 06 10:02:20 2015,mdm,2,2.99
+Tres Rios 1741,,Nitrate+Nitrite 2,5.998,mg N/L,0.292596,Tue Oct 06 10:04:25 2015,mdm,2,2.99
+Tres Rios 1742,,Nitrate+Nitrite 2,6.272,mg N/L,0.303968,Tue Oct 06 10:06:28 2015,mdm,2,2.99
+Tres Rios 1743,,Nitrate+Nitrite 2,4.749,mg N/L,0.239845,Tue Oct 06 10:08:33 2015,mdm,2,2.99
+Digested Blank,,Nitrate+Nitrite 2,0.122,mg N/L,0.028954,Tue Oct 06 10:20:19 2015,mdm,2,1
+Control A,,Nitrate+Nitrite 2,100.395,mg N/L,0.293169,Tue Oct 06 10:21:14 2015,mdm,2,50
+Control B,,Nitrate+Nitrite 2,107.471,mg N/L,0.310756,Tue Oct 06 10:22:08 2015,mdm,4,25
+C C V,,Nitrate+Nitrite 2,0.074,mg N/L,0.033418,Tue Oct 06 10:23:03 2015,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,-0.002,mg N/L,0.006767,Tue Oct 06 10:23:59 2015,mdm,1,1

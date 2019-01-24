@@ -1,0 +1,16 @@
+Sample ID,Sample Details,Test,Results,Units,Absorbance,Date and Time,Operator,Pre Dil Factor,Auto Dil Factor
+C C V,,Nitrate+Nitrite 2,0.099,mg N/L,0.038508,Wed Oct 15 16:32:29 2014,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,0,mg N/L,0.009001,Wed Oct 15 16:34:34 2014,mdm,1,1
+TR 1678 (09292014),,Nitrate+Nitrite 2,6.194,mg N/L,0.348876,Wed Oct 15 16:40:50 2014,mdm,2,2.99
+TR 1679,,Nitrate+Nitrite 2,6.565,mg N/L,0.368518,Wed Oct 15 16:42:56 2014,mdm,2,2.99
+TR 1680,,Nitrate+Nitrite 2,6.75,mg N/L,0.378091,Wed Oct 15 16:45:01 2014,mdm,2,2.99
+TR 1681,,Nitrate+Nitrite 2,6.244,mg N/L,0.351545,Wed Oct 15 16:45:55 2014,mdm,2,2.99
+TR 1682,,Nitrate+Nitrite 2,6.082,mg N/L,0.34289,Wed Oct 15 16:46:50 2014,mdm,2,2.99
+TR1683,,Nitrate+Nitrite 2,6.725,mg N/L,0.376796,Wed Oct 15 16:47:45 2014,mdm,2,2.99
+Digested Blank,,Nitrate+Nitrite 2,0.212,mg N/L,0.040621,Wed Oct 15 16:48:39 2014,mdm,2,1
+Control A,,Nitrate+Nitrite 2,113.447,mg N/L,0.380323,Wed Oct 15 16:49:34 2014,mdm,2,50
+C C V,,Nitrate+Nitrite 2,0.082,mg N/L,0.033295,Wed Oct 15 16:50:28 2014,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,-0.005,mg N/L,0.007646,Wed Oct 15 16:51:23 2014,mdm,1,1
+Control B,,Nitrate+Nitrite 2,104.594,mg N/L,0.352584,Wed Oct 15 16:52:19 2014,mdm,4,25
+C C V,,Nitrate+Nitrite 2,0.087,mg N/L,0.034777,Wed Oct 15 16:53:13 2014,mdm,1,1
+C C B ,,Nitrate+Nitrite 2,-0.009,mg N/L,0.006534,Wed Oct 15 16:54:08 2014,mdm,1,1

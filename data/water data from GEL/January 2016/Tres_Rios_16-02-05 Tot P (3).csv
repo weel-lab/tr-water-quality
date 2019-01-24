@@ -1,0 +1,57 @@
+Sample ID,Sample Details,Test,Results,Units,Absorbance,Date and Time,Operator,Pre Dil Factor,Auto Dil Factor
+STANDARD 1,,Phosphate o-phos 1,0.003,mg P/l,0.002798,Fri Feb 05 11:48:04 2016,mdm,1,1
+STANDARD 90,,Phosphate o-phos 1,0.005,mg P/l,0.004846,Fri Feb 05 10:24:24 2016,mdm,1,1
+STANDARD 91,,Phosphate o-phos 1,0.006,mg P/l,0.006363,Fri Feb 05 10:25:39 2016,mdm,1,1
+STANDARD 92,,Phosphate o-phos 1,0.02,mg P/l,0.020265,Fri Feb 05 10:26:55 2016,mdm,1,1
+STANDARD 93,,Phosphate o-phos 1,0.041,mg P/l,0.041072,Fri Feb 05 10:28:10 2016,mdm,1,1
+STANDARD 94,,Phosphate o-phos 1,0.383,mg P/l,0.382525,Fri Feb 05 10:29:25 2016,mdm,1,1
+STANDARD 0,,Phosphate o-phos 1,0.002,mg P/l,0.002469,Fri Feb 05 10:30:41 2016,mdm,1,1
+C C V,,Phosphate o-phos 1,0.059,mg P/l,0.024953,Fri Feb 05 10:31:56 2016,mdm,1,1
+C C B ,,Phosphate o-phos 1,0,mg P/l,0.002538,Fri Feb 05 10:33:13 2016,mdm,1,1
+CentralSouth_1_21,samples from 1/9/2016,Phosphate o-phos 1,0.164,mg P/l,0.033701,Fri Feb 05 10:34:30 2016,mdm,2,1
+CentralSouth_1_22,,Phosphate o-phos 1,0.145,mg P/l,0.029964,Fri Feb 05 10:35:45 2016,mdm,2,1
+CentralSouth_1_23,,Phosphate o-phos 1,0.142,mg P/l,0.029538,Fri Feb 05 10:37:01 2016,mdm,2,1
+CentralSouth_1_24,,Phosphate o-phos 1,0.132,mg P/l,0.0275,Fri Feb 05 10:38:16 2016,mdm,2,1
+CentralSouth_1_blk,,Phosphate o-phos 1,0.004,mg P/l,0.003149,Fri Feb 05 10:39:32 2016,mdm,2,1
+Price_1_1,samples from 1/9/2016,Phosphate o-phos 1,0.121,mg P/l,0.025485,Fri Feb 05 10:40:48 2016,mdm,2,1
+Price_1_2,,Phosphate o-phos 1,0.116,mg P/l,0.024461,Fri Feb 05 10:42:04 2016,mdm,2,1
+Price_1_3,,Phosphate o-phos 1,0.119,mg P/l,0.025001,Fri Feb 05 10:43:20 2016,mdm,2,1
+Price_1_4,,Phosphate o-phos 1,0.096,mg P/l,0.020655,Fri Feb 05 10:44:36 2016,mdm,2,1
+Price_1_5,,Phosphate o-phos 1,0.116,mg P/l,0.024514,Fri Feb 05 10:45:52 2016,mdm,2,1
+C C V,,Phosphate o-phos 1,0.057,mg P/l,0.023975,Fri Feb 05 10:47:08 2016,mdm,1,1
+C C B ,,Phosphate o-phos 1,0,mg P/l,0.002546,Fri Feb 05 10:48:26 2016,mdm,1,1
+Price_1_6,,Phosphate o-phos 1,0.31,mg P/l,0.061454,Fri Feb 05 10:49:43 2016,mdm,2,1
+Price_1_7,,Phosphate o-phos 1,0.112,mg P/l,0.023756,Fri Feb 05 10:50:59 2016,mdm,2,1
+Price_1_8,,Phosphate o-phos 1,0.12,mg P/l,0.025372,Fri Feb 05 10:52:15 2016,mdm,2,1
+Price_1_9,,Phosphate o-phos 1,0.153,mg P/l,0.031517,Fri Feb 05 10:53:31 2016,mdm,2,1
+Price_1_10,,Phosphate o-phos 1,0.109,mg P/l,0.023267,Fri Feb 05 10:54:47 2016,mdm,2,1
+Price_1_11,,Phosphate o-phos 1,0.122,mg P/l,0.025608,Fri Feb 05 10:56:02 2016,mdm,2,1
+Price_1_12,,Phosphate o-phos 1,0.114,mg P/l,0.024228,Fri Feb 05 10:57:18 2016,mdm,2,1
+Price_1_13,,Phosphate o-phos 1,0.131,mg P/l,0.027412,Fri Feb 05 10:58:33 2016,mdm,2,1
+Price_1_14,,Phosphate o-phos 1,0.116,mg P/l,0.024478,Fri Feb 05 10:59:48 2016,mdm,2,1
+Price_1_15,,Phosphate o-phos 1,0.134,mg P/l,0.027936,Fri Feb 05 11:01:03 2016,mdm,2,1
+C C V,,Phosphate o-phos 1,0.058,mg P/l,0.024368,Fri Feb 05 11:02:17 2016,mdm,1,1
+C C B ,,Phosphate o-phos 1,0,mg P/l,0.002477,Fri Feb 05 11:03:36 2016,mdm,1,1
+Price_1_16,,Phosphate o-phos 1,0.027,mg P/l,0.007541,Fri Feb 05 11:04:55 2016,mdm,2,1
+Price_1_17,,Phosphate o-phos 1,0.13,mg P/l,0.027275,Fri Feb 05 11:06:12 2016,mdm,2,1
+Price_1_18,,Phosphate o-phos 1,0.131,mg P/l,0.027354,Fri Feb 05 11:07:29 2016,mdm,2,1
+Price_1_19,,Phosphate o-phos 1,0.137,mg P/l,0.028511,Fri Feb 05 11:08:46 2016,mdm,2,1
+Price_1_20,,Phosphate o-phos 1,0.114,mg P/l,0.024083,Fri Feb 05 11:10:03 2016,mdm,2,1
+Price_1_21,,Phosphate o-phos 1,0.128,mg P/l,0.026884,Fri Feb 05 11:11:20 2016,mdm,2,1
+Price_1_22,,Phosphate o-phos 1,0.125,mg P/l,0.026274,Fri Feb 05 11:12:36 2016,mdm,2,1
+Price_1_23,,Phosphate o-phos 1,0.133,mg P/l,0.027771,Fri Feb 05 11:13:53 2016,mdm,2,1
+Price_1_24,,Phosphate o-phos 1,0.008,mg P/l,0.004013,Fri Feb 05 11:15:10 2016,mdm,2,1
+Price_1_blk,,Phosphate o-phos 1,0.01,mg P/l,0.00425,Fri Feb 05 11:16:25 2016,mdm,2,1
+C C V,,Phosphate o-phos 1,0.058,mg P/l,0.024474,Fri Feb 05 11:17:42 2016,mdm,1,1
+C C B ,,Phosphate o-phos 1,0,mg P/l,0.002468,Fri Feb 05 11:19:01 2016,mdm,1,1
+Tres Rios 1762,samples from 1/11/2016,Phosphate o-phos 1,3.049,mg P/l,0.195381,Fri Feb 05 11:19:58 2016,mdm,2,3.01
+Tres Rios 1763,,Phosphate o-phos 1,3.149,mg P/l,0.201747,Fri Feb 05 11:20:59 2016,mdm,2,3.01
+Tres Rios 1764,,Phosphate o-phos 1,3.019,mg P/l,0.193536,Fri Feb 05 11:21:53 2016,mdm,2,3.01
+Tres Rios 1765,,Phosphate o-phos 1,2.978,mg P/l,0.190927,Fri Feb 05 11:22:47 2016,mdm,2,3.01
+Tres Rios 1766,,Phosphate o-phos 1,2.815,mg P/l,0.180622,Fri Feb 05 11:23:40 2016,mdm,2,3.01
+Tres Rios 1767,,Phosphate o-phos 1,2.833,mg P/l,0.181736,Fri Feb 05 11:24:34 2016,mdm,2,3.01
+Control A,,Phosphate o-phos 1,8.128,mg P/l,0.157191,Fri Feb 05 11:25:27 2016,mdm,2,10
+Control B,,Phosphate o-phos 1,9.211,mg P/l,0.090165,Fri Feb 05 11:26:21 2016,mdm,4,10
+Digest Blank,,Phosphate o-phos 1,0.005,mg P/l,0.003342,Fri Feb 05 11:27:14 2016,mdm,2,1
+C C V,,Phosphate o-phos 1,0.057,mg P/l,0.024277,Fri Feb 05 11:28:08 2016,mdm,1,1
+C C B ,,Phosphate o-phos 1,0,mg P/l,0.00253,Fri Feb 05 11:29:01 2016,mdm,1,1

@@ -1,0 +1,271 @@
+---
+title: "water quality graphics"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+#HOUSEKEEPING
+
+library("ggplot2")
+
+```
+
+```{r Transect NO3}
+
+tr_waterqualplot_transect_no3 <- ggplot(data = transect_summary, aes(x = date)) +
+  #marsh data 
+  geom_errorbar(mapping=aes(x=date, ymin=marsh_shore_no3-marsh_shore_no3_se, ymax=marsh_shore_no3+marsh_shore_no3_se), width=50, size=0.5, color="blue")+
+  geom_point(aes(y = marsh_shore_no3 , color = "Marsh NO3"), size = 5, pch = 15)+
+  #open water data
+  geom_errorbar(mapping=aes(x=date, ymin=marsh_water_no3-marsh_water_no3_se, ymax=marsh_water_no3+marsh_water_no3_se), width=50, size=0.5, color="red")+
+  geom_point(aes(y = marsh_water_no3 , color = "Open Water NO3"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Nitrate (mg/L)")+ 
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.8,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Marsh NO3" = "blue", "Open Water NO3" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_transect_no3)
+
+```
+
+```{r Transect NH4}
+
+tr_waterqualplot_transect_nh4 <- ggplot(data = transect_summary, aes(x = date)) +
+  #marsh data
+  geom_errorbar(mapping=aes(x=date, ymin=marsh_shore_nh4-marsh_shore_nh4_se, ymax=marsh_shore_nh4+marsh_shore_nh4_se), width=50, size=0.5, color="blue")+
+  geom_point(aes(y = marsh_shore_nh4 , color = "Marsh NH4"), size = 5, pch = 15)+
+  #open water data
+  geom_errorbar(mapping=aes(x=date, ymin=marsh_water_nh4-marsh_water_nh4_se, ymax=marsh_water_nh4+marsh_water_nh4_se), width=50, size=0.5, color="red")+
+  geom_point(aes(y = marsh_water_nh4 , color = "Open Water NH4"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Ammonium (mg/L)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.8,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Marsh NH4" = "blue", "Open Water NH4" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_transect_nh4)
+```
+
+```{r WHOLE SYSTEM NH4}
+
+tr_waterqualplot_system_nh4 <- ggplot(data = whole_system_summary, aes(x = date)) +
+  #inflow data
+  geom_errorbar(mapping=aes(x=date, ymin=inflow_nh4-inflow_nh4_se, ymax=inflow_nh4+inflow_nh4_se), width=50, size=0.5, color="blue")+
+  geom_point(aes(y = inflow_nh4 , color = "Inflow NH4"), size = 5, pch = 15)+
+  #outflow data
+  geom_errorbar(mapping=aes(x=date, ymin=outflow_nh4-outflow_nh4_se, ymax=outflow_nh4+outflow_nh4_se), width=50, size=0.5, color="red")+
+  geom_point(aes(y = outflow_nh4 , color = "Outflow NH4"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Ammonium (mg/L)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.8,0.99))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Inflow NH4" = "blue", "Outflow NH4" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_nh4)
+```
+
+```{r WHOLE SYSTEM NH4 FLUX}
+
+tr_waterqualplot_system_nh4flux <- ggplot(data = tr_nutrient_fluxes, aes(x = date)) +
+  #inflow data
+  geom_point(aes(y = inflow_nh4_flux_kg, color = "Inflow NH4 Flux"), size = 5, pch = 15)+
+  #outflow data
+  geom_point(aes(y = outflow_nh4_flux_kg , color = "Outflow NH4 Flux"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Total Ammonium flux (kg/month)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.25,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Inflow NH4 Flux" = "blue", "Outflow NH4 Flux" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_nh4flux)
+```
+
+```{r WHOLE SYSTEM TN}
+
+tr_waterqualplot_system_tn <- ggplot(data = whole_system_summary, aes(x = date)) +
+  #inflow data
+  geom_errorbar(mapping=aes(x=date, ymin=inflow_tn-inflow_tn_se, ymax=inflow_tn+inflow_tn_se), width=50, size=0.5, color="blue")+
+  geom_point(aes(y = inflow_tn , color = "Inflow TN"), size = 5, pch = 15)+
+  #outflow data
+  geom_errorbar(mapping=aes(x=date, ymin=outflow_tn-outflow_tn_se, ymax=outflow_tn+outflow_tn_se), width=50, size=0.5, color="red")+
+  geom_point(aes(y = outflow_tn , color = "Outflow TN"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Total Nitrogen (mg/L)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.7,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Inflow TN" = "blue", "Outflow TN" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_tn)
+```
+
+```{r WHOLE SYSTEM TP}
+
+tr_waterqualplot_system_tp <- ggplot(data = whole_system_summary, aes(x = date)) +
+  #inflow data
+  geom_errorbar(mapping=aes(x=date, ymin=inflow_tp-inflow_tp_se, ymax=inflow_tp+inflow_tp_se), width=50, size=0.5, color="blue")+
+  geom_point(aes(y = inflow_tp , color = "Inflow TP"), size = 5, pch = 15)+
+  #outflow data
+  geom_errorbar(mapping=aes(x=date, ymin=outflow_tp-outflow_tp_se, ymax=outflow_tp+outflow_tp_se), width=50, size=0.5, color="red")+
+  geom_point(aes(y = outflow_tp , color = "Outflow TP"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Total Phosphorus (mg/L)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.3,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Inflow TP" = "blue", "Outflow TP" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_tp)
+```
+
+
+```{r WHOLE SYSTEM TN FLUX}
+
+tr_waterqualplot_system_tnflux <- ggplot(data = tr_nutrient_fluxes, aes(x = date)) +
+  #inflow data
+  geom_point(aes(y = inflow_tn_flux_kg, color = "Inflow TN Flux"), size = 5, pch = 15)+
+  #outflow data
+  geom_point(aes(y = outflow_tn_flux_kg, color = "Outflow TN Flux"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Total Nitrogen flux (kg/month)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.7,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", 
+                      values = c("Inflow TN Flux" = "blue", "Outflow TN Flux" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_tnflux)
+```
+
+```{r WHOLE SYSTEM TP FLUX}
+
+tr_waterqualplot_system_tpflux <- ggplot(data = tr_nutrient_fluxes, aes(x = date)) +
+  #inflow data
+  geom_point(aes(y = inflow_tp_flux_kg, color = "Inflow TP Flux"), size = 5, pch = 15)+
+  #outflow data
+  geom_point(aes(y = outflow_tp_flux_kg, color = "Outflow TP Flux"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Total Phosphorus flux (kg/month)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.35,0.9))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", 
+                      values = c("Inflow TP Flux" = "blue", "Outflow TP Flux" = "red"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_tpflux)
+```
+
+```{r EXPORTING GRAPHICS}
+
+ggsave("tr_waterqualplot_transect_no3.eps", tr_waterqualplot_transect_no3, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_transect_nh4.eps", tr_waterqualplot_transect_nh4, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_nh4.eps", tr_waterqualplot_system_nh4, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_tn.eps", tr_waterqualplot_system_tn, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_tp.eps", tr_waterqualplot_system_tp, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_tnflux.eps", tr_waterqualplot_system_tnflux, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_tpflux.eps", tr_waterqualplot_system_tpflux, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_nh4flux.eps", tr_waterqualplot_system_nh4flux, width = 12, path = '/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/graphics')
+
+
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).

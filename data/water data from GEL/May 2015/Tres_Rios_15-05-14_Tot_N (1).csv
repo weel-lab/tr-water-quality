@@ -1,0 +1,29 @@
+Sample ID,Sample Details,Test,Results,Units,Absorbance,Date and Time,Operator,Pre Dil Factor,Auto Dil Factor
+STANDARD 1,,Nitrate+Nitrite 2,  0.003,mg N/L,0.002579,Thu May 14 14:08:45 2015,tac,1,1
+STANDARD 90,,Nitrate+Nitrite 2,  0.005,mg N/L,0.005301,Thu May 14 14:10:51 2015,tac,1,1
+STANDARD 91,,Nitrate+Nitrite 2,  0.006,mg N/L,0.006152,Thu May 14 14:12:57 2015,tac,1,1
+STANDARD 92,,Nitrate+Nitrite 2,  0.006,mg N/L,0.006323,Thu May 14 14:15:02 2015,tac,1,1
+STANDARD 93,,Nitrate+Nitrite 2,  0.017,mg N/L,0.016824,Thu May 14 14:17:08 2015,tac,1,1
+STANDARD 94,,Nitrate+Nitrite 2,  0.060,mg N/L,0.060131,Thu May 14 14:19:13 2015,tac,1,1
+STANDARD 95,,Nitrate+Nitrite 2,  0.223,mg N/L,0.222881,Thu May 14 14:21:19 2015,tac,1,1
+STANDARD 96,,Nitrate+Nitrite 2,  0.553,mg N/L,0.552664,Thu May 14 14:23:24 2015,tac,1,1
+STANDARD 0,,Nitrate+Nitrite 2,  0.003,mg N/L,0.002942,Thu May 14 14:25:29 2015,tac,1,1
+C C V,,Nitrate+Nitrite 2,  0.108,mg N/L,0.033555,Thu May 14 14:27:34 2015,tac,1,1
+C C B ,,Nitrate+Nitrite 2,  0.003,mg N/L,0.002968,Thu May 14 14:29:40 2015,tac,1,1
+TR1714 (3202015),,Nitrate+Nitrite 2,  5.591,mg N/L,0.258269,Thu May 14 14:31:46 2015,tac,2.00,2.99
+TR1715,,Nitrate+Nitrite 2,  4.778,mg N/L,0.222348,Thu May 14 14:33:51 2015,tac,2.00,2.99
+TR1716,,Nitrate+Nitrite 2,  5.387,mg N/L,0.249256,Thu May 14 14:35:54 2015,tac,2.00,2.99
+TR1717,,Nitrate+Nitrite 2,  4.497,mg N/L,0.209909,Thu May 14 14:37:59 2015,tac,2.00,2.99
+TR1718,,Nitrate+Nitrite 2,  4.190,mg N/L,0.196269,Thu May 14 14:40:03 2015,tac,2.00,2.99
+TR1719,,Nitrate+Nitrite 2,  4.732,mg N/L,0.220305,Thu May 14 14:42:09 2015,tac,2.00,2.99
+TR1893 (5122015),,Nitrate+Nitrite 2,  3.458,mg N/L,0.163622,Thu May 14 14:44:14 2015,tac,2.00,2.99
+TR8227,,Nitrate+Nitrite 2,  5.385,mg N/L,0.249182,Thu May 14 14:45:09 2015,tac,2.00,2.99
+TR9240,,Nitrate+Nitrite 2,  3.396,mg N/L,0.160851,Thu May 14 14:46:04 2015,tac,2.00,2.99
+TR10055,,Nitrate+Nitrite 2,  4.711,mg N/L,0.219399,Thu May 14 14:46:58 2015,tac,2.00,2.99
+C C V,,Nitrate+Nitrite 2,  0.093,mg N/L,0.029237,Thu May 14 14:47:53 2015,tac,1,1
+C C B ,,Nitrate+Nitrite 2,  0.001,mg N/L,0.002283,Thu May 14 14:48:48 2015,tac,1,1
+DIGESTED BLANK,,Nitrate+Nitrite 2,  0.198,mg N/L,0.031056,Thu May 14 14:49:44 2015,tac,2.00,1
+CONTROL A,,Nitrate+Nitrite 2,115.762,mg N/L,0.317488,Thu May 14 14:50:38 2015,tac,2.00,50.00
+CONTROL B,,Nitrate+Nitrite 2,113.800,mg N/L,0.312283,Thu May 14 14:51:33 2015,tac,4.00,25.00
+C C V,,Nitrate+Nitrite 2,  0.105,mg N/L,0.032693,Thu May 14 14:52:27 2015,tac,1,1
+C C B ,,Nitrate+Nitrite 2,  0.001,mg N/L,0.002469,Thu May 14 14:53:23 2015,tac,1,1

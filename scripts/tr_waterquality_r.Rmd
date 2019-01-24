@@ -1,0 +1,212 @@
+---
+title: "Tres Rios Water Quality Data Analysis"
+output: html_notebook
+---
+
+This script is used to process Tres Rios water quality data. This includes calculating averages and standard errors for samples at all sampling locations, as well as joining these sampling locations into summary tabels for marsh sampling gradients and whole-system sampling gradients.
+
+```{r HOUSKEEPING}
+
+# libraries ----
+library('plyr') # always load plyr before dplyr
+library("dplyr")
+library("tidyr")
+library("stringr")
+library("lubridate")
+
+#import and clean agpp data ----
+water_quality <- read.csv('/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/data/tr_waterquality_fielddata.csv', stringsAsFactors = FALSE)
+water_quality[water_quality == ''] <- NA # change all missing values to NA
+
+#convert various date and number formats
+water_quality <- water_quality %>%
+  mutate(date = mdy(date)) #converts to date format using lubridate
+
+#define a function to compute standard error - note this assumes sample size always 3, need to confirm whether I can assume that
+se = function(x)
+  (sd(x))/sqrt(3)
+
+```
+
+**Summary Data**
+This next chunk will average values for all variables across all samples at a given location (i.e. inflow, outflow) for a given month. 
+
+```{r SUMMARY DATA}
+
+#create a data.table to compute and store summary data from shore samples across all transects
+all_data_summary <- water_quality %>%
+  mutate(month = month(date)) %>%
+  mutate(year = year(date)) %>%
+  group_by(month, year, location) %>%
+  summarize(
+        tn = mean(tn_mgL),
+        tn_se = se(tn_mgL),
+        tp = mean(tp_mgL),
+        tp_se = se(tp_mgL),
+        doc = mean(doc_mgL),
+        doc_se = se(doc_mgL),
+        no2 = mean(no2_mgL),
+        no2_se = se(no2_mgL),
+        no3 = mean(no3_mgL),
+        no3_se = se(no3_mgL),
+        nh4 = mean(nh4_mgL),
+        nh4_se = se(nh4_mgL),
+        po4 = mean(po4_ugL),
+        po4_se = se(po4_ugL),
+        cl = mean(cl_mgL),
+        cl_se = se(cl_mgL),
+        cond = mean(conductance_us),
+        cond_se = se(conductance_us),
+        spec_cond = mean(spec_cond_us),
+        spec_cond_se = se(spec_cond_us),
+        temperature_c = mean(temperature_c),
+        temperature_se = se(temperature_c),
+        ph = mean(ph),
+        ph = se(ph)
+  ) %>%
+  #mutate(ph = as.numeric(ph)) %>%
+  #mutate(temperature_se = as.numeric(temperature_se)) %>%
+  arrange(year, month) %>%
+  ungroup()
+
+```
+
+**Location-specific summary data**
+This chunk will take the previous chunk's output and split it out into 4 location-specific data tables. In the previous chunk's output ("all_data_summary"), location is stored as variable which will potentially make graphing multiple locations on one plot difficult downstream.
+
+```{r LOCATION-SPECIFIC DATA TABLES}
+
+#marsh shore summary data
+marsh_shore_summary <- all_data_summary %>%
+  filter(location == "shore") %>%
+  select(-(tn:tp_se)) %>% #removes tn/tp columns (not measured for transects)
+  select(-(location)) 
+colnames(marsh_shore_summary) <- paste("marsh_shore", colnames(marsh_shore_summary), sep = "_") #pastes a prefix to all columns
+#remove prefix from first three columns to allow proper data.table joining downstream
+names(marsh_shore_summary)[1] <- "month"
+names(marsh_shore_summary)[2] <- "year"
+
+#marsh water summary data
+marsh_water_summary <- all_data_summary %>%
+  filter(location == "water") %>%
+  select(-(tn:tp_se)) %>% #removes tn/tp columns (not measured for transects)
+  select(-(location)) #removes location (will be specified anyways in variable names)
+colnames(marsh_water_summary) <- paste("marsh_water", colnames(marsh_water_summary), sep = "_") #pastes a prefix to all columns
+#remove prefix from first two columns to allow proper data.table joining downstream
+names(marsh_water_summary)[1] <- "month"
+names(marsh_water_summary)[2] <- "year"
+
+#whole-system inflow summary data
+inflow_summary <- all_data_summary %>%
+  filter(location == "inflow") %>%
+  select(-(location)) #removes location (will be specified anyways in variable names)
+colnames(inflow_summary) <- paste("inflow", colnames(inflow_summary), sep = "_") #pastes a prefix to all columns
+#remove prefix from first two columns to allow proper data.table joining downstream
+names(inflow_summary)[1] <- "month"
+names(inflow_summary)[2] <- "year"
+
+#whole-system outflow summary data
+outflow_summary <- all_data_summary %>%
+  filter(location == "outflow") %>%
+  select(-(location)) #removes location (will be specified anyways in variable names)
+colnames(outflow_summary) <- paste("outflow", colnames(outflow_summary), sep = "_") #pastes a prefix to all columns
+#remove prefix from first two columns to allow proper data.table joining downstream
+names(outflow_summary)[1:2] <- c("month", "year")
+
+```
+
+**Summary Data Tables**
+
+This chunk joins the two transect-level and two whole-system summary datasets generated previously into tables for transect (shore, water) and whole-system (inflow, outflow) summaries, respectively.
+
+```{r SUMMARY DATA}
+
+transect_summary <- merge(marsh_shore_summary, marsh_water_summary, by = c("month", "year")) %>%
+  arrange(year, month) %>%
+  #need to create a date column for graphing purposes
+  mutate(date = paste("01", month, year, sep = "/")) %>%
+  mutate(date = dmy(date)) %>%
+  #reorder columns to put date column first
+  select(date, everything())
+
+whole_system_summary <- merge(inflow_summary, outflow_summary, by = c("month", "year")) %>%
+  arrange(year, month) %>%
+  #need to create a date column for graphing purposes
+  mutate(date = paste("01", month, year, sep = "/")) %>%
+  mutate(date = dmy(date)) %>%
+  #reorder columns to put date column first
+  select(date, everything())
+
+```
+
+```{r FLUX CALCULATIONS}
+#note - need to have run all of the tranpsiration analysis code first to update 
+
+tr_water_budget <- read.csv('/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-budget/results/tr_water_budget.csv', stringsAsFactors = FALSE)
+
+#fixing the data up 
+tr_nutrient_fluxes <- merge(tr_water_budget, whole_system_summary, by = c("month", "year")) %>%
+  arrange(year, month) %>%
+  mutate(date = paste("01", month, year, sep = "/")) %>%
+  mutate(date = dmy(date)) %>%
+  #reorder columns to put date column first
+  select(date, everything()) %>%
+  #convert waterflux in m3 to L
+  mutate(
+    monthly_frw1_inflow_L = monthly_frw1_inflow_m3*1000,
+    monthly_frw1_outflow_L = monthly_frw1_outflow_m3*1000) %>%
+  #get rid of all columns except water flux and nutrients
+  select(date, monthly_frw1_inflow_L, monthly_frw1_outflow_L, inflow_tn, inflow_tn_se, inflow_tp, inflow_tp_se, outflow_tn, outflow_tn_se, outflow_tp, outflow_tp_se, inflow_nh4, inflow_nh4_se, outflow_nh4, outflow_nh4_se) %>%
+  
+  
+#calculate fluxes!
+tr_nutrient_fluxes <- tr_nutrient_fluxes %>%  
+  #tn
+  mutate(
+    inflow_tn_flux_kg = ((inflow_tn*monthly_frw1_inflow_L)/1000000),
+    inflow_tn_flux_se_kg = (inflow_tn_se*monthly_frw1_inflow_L)/1000000,
+    outflow_tn_flux_kg = (outflow_tn*monthly_frw1_outflow_L)/1000000,
+    outflow_tn_flux_se_kg = (outflow_tn_se*monthly_frw1_outflow_L)/1000000) %>%
+  #tp
+  mutate(
+    inflow_tp_flux_kg = (inflow_tp*monthly_frw1_inflow_L)/1000000,
+    inflow_tp_flux_se_kg = (inflow_tp_se*monthly_frw1_inflow_L)/1000000,
+    outflow_tp_flux_kg = (outflow_tp*monthly_frw1_outflow_L)/1000000,
+    outflow_tp_flux_se_kg = (outflow_tp_se*monthly_frw1_outflow_L)/1000000) %>%
+  #nh4
+  mutate(
+    inflow_nh4_flux_kg = (inflow_nh4*monthly_frw1_inflow_L)/1000000,
+    inflow_nh4_flux_se_kg = (inflow_nh4_se*monthly_frw1_inflow_L)/1000000,
+    outflow_nh4_flux_kg = (outflow_nh4*monthly_frw1_outflow_L)/1000000,
+    outflow_nh4_flux_se_kg = (outflow_nh4_se*monthly_frw1_outflow_L)/1000000)
+
+#use select to clean up spreadsheet
+tr_nutrient_fluxes <- tr_nutrient_fluxes %>%
+  select(-(monthly_frw1_inflow_L:outflow_nh4_se))
+
+
+
+
+
+```
+
+
+
+**EXPORT RESULTS**
+
+```{r RESULTS EXPORT}
+
+#write certain datasheets as csv to the current working directory
+
+write.csv(whole_system_summary, file = "/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/results/tr_waterquality_whole_system_summary.csv")
+
+write.csv(transect_summary, file = "/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/results/tr_waterquality_transect_summary.csv")
+
+```
+ 
+To do:
+1) NEED TO FIX CLASS CHANGES FOR PH/TEMP - not high priority since we don't graph these data
+
+Notes:
+20170725
+1) Another (potentially easier) way to do this might have been to just generate one big table that summarizes the water quality variables (no3, etc.) and still has transect/location columns. Then do a few chunks using filter() to generate the individual tables (marsh_shore_summary etc.). Then merge them back together again. 
