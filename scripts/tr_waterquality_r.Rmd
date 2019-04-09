@@ -15,7 +15,7 @@ library("stringr")
 library("lubridate")
 
 #import and clean agpp data ----
-water_quality <- read.csv('/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-quality/data/tr_waterquality_fielddata.csv', stringsAsFactors = FALSE)
+water_quality <- read.csv('/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/data/tr_waterquality_fielddata.csv', stringsAsFactors = FALSE)
 water_quality[water_quality == ''] <- NA # change all missing values to NA
 
 #convert various date and number formats
@@ -142,7 +142,7 @@ whole_system_summary <- merge(inflow_summary, outflow_summary, by = c("month", "
 ```{r FLUX CALCULATIONS}
 #note - need to have run all of the tranpsiration analysis code first to update 
 
-tr_water_budget <- read.csv('/Volumes/GoogleDrive/My Drive/weel/tres rios/datasets/tr-water-budget/results/tr_water_budget.csv', stringsAsFactors = FALSE)
+tr_water_budget <- read.csv('/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-budget/results/tr_water_budget.csv', stringsAsFactors = FALSE)
 
 #fixing the data up 
 tr_nutrient_fluxes <- merge(tr_water_budget, whole_system_summary, by = c("month", "year")) %>%
@@ -156,7 +156,7 @@ tr_nutrient_fluxes <- merge(tr_water_budget, whole_system_summary, by = c("month
     monthly_frw1_inflow_L = monthly_frw1_inflow_m3*1000,
     monthly_frw1_outflow_L = monthly_frw1_outflow_m3*1000) %>%
   #get rid of all columns except water flux and nutrients
-  select(date, monthly_frw1_inflow_L, monthly_frw1_outflow_L, inflow_tn, inflow_tn_se, inflow_tp, inflow_tp_se, outflow_tn, outflow_tn_se, outflow_tp, outflow_tp_se, inflow_nh4, inflow_nh4_se, outflow_nh4, outflow_nh4_se) %>%
+  select(date, monthly_frw1_inflow_L, monthly_frw1_outflow_L, inflow_tn, inflow_tn_se, inflow_tp, inflow_tp_se, outflow_tn, outflow_tn_se, outflow_tp, outflow_tp_se, inflow_nh4, inflow_nh4_se, outflow_nh4, outflow_nh4_se)
   
   
 #calculate fluxes!
