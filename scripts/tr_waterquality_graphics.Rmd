@@ -132,6 +132,35 @@ tr_waterqualplot_system_nh4 <- ggplot(data = whole_system_summary, aes(x = date)
 print(tr_waterqualplot_system_nh4)
 ```
 
+```{r WHOLE SYSTEM NO2}
+
+tr_waterqualplot_system_no2 <- ggplot(data = whole_system_summary, aes(x = date)) +
+  #inflow data
+  geom_errorbar(mapping=aes(x=date, ymin=inflow_no2-inflow_no2_se, ymax=inflow_no2+inflow_no2_se), width=50, size=0.5, color="maroon")+
+  geom_point(aes(y = inflow_no2 , color = "Inflow NO2"), size = 5, pch = 15)+
+  #outflow data
+  geom_errorbar(mapping=aes(x=date, ymin=outflow_no2-outflow_no2_se, ymax=outflow_no2+outflow_no2_se), width=50, size=0.5, color="darkgoldenrod1")+
+  geom_point(aes(y = outflow_no2 , color = "Outflow NO2"), size = 5)+
+  #formatting
+  scale_x_date(date_breaks="1 year", date_labels ="%Y", limit = c(as.Date("2010-12-30"), as.Date("2018-10-01")))+
+  labs(x = "Date", y = "Nitrite (mg/L)")+
+  theme(legend.text = element_text(size = 25))+
+  theme(legend.position=c(0.8,0.99))+ #first number is left-right (0-1), second number is down-up (0-1)
+  theme(legend.key=element_rect(fill='white'))+
+  theme(legend.box.spacing=unit(0, "cm"))+
+  theme(panel.background = element_rect(fill = 'white'))+
+  theme(axis.title=element_text(size=25))+
+  theme(axis.line.x = element_line())+
+  theme(axis.line.y = element_line())+
+  theme(axis.text.x = element_text(size = 25))+
+  theme(axis.text.y = element_text(size = 25))+
+  theme(plot.margin = unit(c(1, 1, 1, 1), "cm"))+ #top, right, bottom, left
+  scale_color_manual("", values = c("Inflow NO2" = "maroon", "Outflow NO2" = "darkgoldenrod1"))+
+  guides(colour = guide_legend(override.aes = list(shape=c(15, 16))))
+
+print(tr_waterqualplot_system_no2)
+```
+
 ```{r WHOLE SYSTEM NH4 FLUX}
 
 tr_waterqualplot_system_nh4flux <- ggplot(data = tr_nutrient_fluxes, aes(x = date)) +
@@ -280,11 +309,15 @@ ggsave("tr_waterqualplot_transect_no3.jpg", tr_waterqualplot_transect_no3, width
 
 ggsave("tr_waterqualplot_transect_nh4.jpg", tr_waterqualplot_transect_nh4, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
 
+ggsave("tr_waterqualplot_transect_no2.jpg", tr_waterqualplot_transect_no2, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
+
 ggsave("tr_waterqualplot_system_nh4.jpg", tr_waterqualplot_system_nh4, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
 
 ggsave("tr_waterqualplot_system_tn.jpg", tr_waterqualplot_system_tn, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
 
 ggsave("tr_waterqualplot_system_tp.jpg", tr_waterqualplot_system_tp, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
+
+ggsave("tr_waterqualplot_system_no2.jpg", tr_waterqualplot_system_no2, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
 
 ggsave("tr_waterqualplot_system_tnflux.jpg", tr_waterqualplot_system_tnflux, width = 12, path = '/Users/chrissanchez/Documents/weel/tres rios/datasets/tr-water-quality/graphics')
 
